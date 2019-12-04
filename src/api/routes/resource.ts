@@ -11,8 +11,8 @@ export default (app: Router) => {
     async (req: Request, res: Response, next: NextFunction) => {
       
     try {
-        const dictionaryRecord = await ResourceService.create()
-        return res.status(201).json({"created": 'resource created'})
+        const resourceRecord = await ResourceService.create()
+        return res.status(201).json({"data": resourceRecord})
       } catch (e) {
         res.json({error: e})
         return next(e);
